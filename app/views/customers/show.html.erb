@@ -1,0 +1,45 @@
+<%= render 'layouts/home'%>
+  <div class="right_col" role="main" style="min-height: 600px;">
+    <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel" style="min-height: 600px;">
+            <div class="x_title">  <div class="nav navbar-right panel_toolbox">
+            <a class="btn btn-dark" href="<%=customers_main_path%>"><i class="fa fa-rotate-left m-right-xs"></i> Back To Home</a>                
+            </div>
+              <h3>Customer Profile</h3>
+                 <div class="clearfix">
+                  </div>
+                  </div>
+                 <div class="x_panel title fixed_height_320 overflow_hidden">
+                    <div class="col-md-8 col-lg-8 col-sm-7">
+                      <blockquote>
+                        <p>Welcome to the HomeWorker <%= @customer.first_name %> !! We are glad to see You here.</p>
+                        <p>This site will help you for online booking of Home Cleaning.</p>
+                        <p> You can see the list of Cleaners working for Home Cleaning.</p>
+                        <p>Based on Quality Score of cleaner You can book cleaner for Home Cleaning.</p>
+                        <p>Have a Great day :)</p>
+                      </blockquote>
+                    </div>
+                  <div class="col-md-4 col-sm-4 col-xs-5">
+                    <ul class="list-unstyled user_data">
+                      <li>
+                        <i class="fa fa-user"></i> <%= @customer.first_name %> <%= @customer.last_name %>
+                      </li>
+                      <li><i class="fa fa-map-marker user-profile-icon"></i>  <%= @customer.city %>
+                      </li>
+                      <li>
+                        <i class="fa fa-envelope"></i> <%= @customer.email %>
+                      </li>
+                      <li>
+                        <i class="fa fa-phone"></i> <%= @customer.phone_number %>
+                      </li>
+                    </ul>
+                  </div> 
+                  <a class="btn btn-success" href="<%=edit_customer_path(@customer)%>"><i class="fa fa-edit m-right-xs"></i> Edit Profile</a>
+                  <a class="btn btn-primary" href="<%=cleaners_path%>"><i class="fa fa-edit m-right-xs"></i> Book Cleaner</a>             
+                  </div>
+            </div>
+          </div>
+        </div>
+        

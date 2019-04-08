@@ -1,0 +1,52 @@
+<div data-controller='bookings'>
+  <div class="right_col" role="main"style="min-height: 600px;">
+    <%= form_with(model: @booking, local: true, class: 'form-horizontal form-label-left') do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="x_panel" style="min-height: 600px;">
+        <h1><b>Booking</b>
+          <div class="nav navbar-right panel_toolbox">
+          <a class="btn  btn-info" href="<%=cleaners_path%>"><i class="fa fa-eye"></i>  See cleaners List</a>
+          </div>
+        </h1><br>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+              <%= t('bookings.customer_name') %>
+            <span class="text-danger">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_field :customer_name, class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+              <%= t('bookings.cleaner_name') %>
+              <span class="text-danger">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_field :cleaner_name, class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="form-group">  
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+              <%= t('bookings.date') %>
+              <span class="text-danger">*</span>
+            </label>
+              <script>
+              $(function() {
+              $( "#datepicker" ).datepicker();
+              });
+              </script>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_field :date, class: 'form-control', class: 'form-control', id: "datepicker", required: true %>
+            </div>
+          </div></br>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button class="btn btn-primary" type="reset">Reset</button>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+         </div>
+        </form>
+      </div>
+    </div>
+<%end%>

@@ -1,0 +1,35 @@
+<%= render 'layouts/home'%>
+<div class="right_col" role="main" style="min-height: 600px;"> 
+<div class="container">
+  <h1>Cleaners List</h1><br>
+    <table class="table table-striped jambo_table bulk_action">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>City</th>
+          <th>Quality Score</th>
+          <th>Book Cleaner</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @cleaners.each do |cleaner| %>
+      <tr>
+        <td><%= cleaner.first_name %></td>
+        <td><%= cleaner.last_name %></td>
+        <td><%= cleaner.email %></td>
+        <td><%= cleaner.phone_number %></td>
+        <td><%= cleaner.city %></td>
+        <td><%= cleaner.quality_score %></td>
+        <td> 
+          <a class="btn btn-link" href="<%=new_booking_path(@booking)%>"><i class="fa fa-edit m-right-xs"></i>  Book</a>
+        </td>
+      </tr>
+      <%end%>
+    </tbody>
+    </table>
+    </div>
+  </div>
+</div>

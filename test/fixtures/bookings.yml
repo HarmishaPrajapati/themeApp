@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_name: MyString
+  cleaner_name: MyString
+  date: 2019-04-05
+
+two:
+  customer_name: MyString
+  cleaner_name: MyString
+  date: 2019-04-05

@@ -1,0 +1,23 @@
+<%=render 'layouts/home'%>
+<div class="right_col" role="main" style="min-height: 500px;">
+<div class="x_panel" style="min-height: 600px;">
+<div class="col-md-8 col-lg-8 col-sm-7">
+<h3>You have successfully booked Cleaner</h3>
+<p>Details are : </p>
+  <ul class="list-unstyled user_data">
+    <li>
+      <i class="fa fa-user"></i>  Customer : <%= @booking.customer_name %> 
+    </li>
+    <li>
+      <i class="fa fa-user"></i>  Cleaner :  <%= @booking.cleaner_name %>
+    </li>
+    <li>
+      <i class="fa fa-clock-o"></i>  Date : <%= @booking.date %>
+    </li>
+  </ul><br><br>
+  <div>
+    <a class="btn btn-success" href="<%=edit_booking_path(@booking)%>"><i class="fa fa-edit m-right-xs"></i> Edit Booking</a>
+    <a class="btn btn-dark" href="<%=customers_main_path%>"><i class="fa fa-rotate-left m-right-xs"></i> Back To Home</a>                
+  </div> 
+</div>
+</div>

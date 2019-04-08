@@ -1,0 +1,73 @@
+<div data-controller='customers'>
+  <div class="right_col" role="main" style="min-height: 600px;">
+    <%= form_with(model: @customer, local: true, class: 'form-horizontal form-label-left') do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <div class="x_panel" style="min-height: 600px;"><h1><b>Customer</b>
+        <div class="nav navbar-right panel_toolbox">
+        <h5>If Registered  <a class="btn btn-round btn-primary" href="<%=cleaners_path(@customer)%>"><i class="fa fa-edit m-right-xs"></i>  Book Cleaner</a>
+        </div></h1><br>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+              <%= t('customers.first_name') %>
+              <span class="text-danger">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_field :first_name, class: 'form-control', required: true %>
+            </div>
+          </div>
+
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                <%= t('customers.last_name') %>
+                <span class="text-danger">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <%= f.text_field :last_name, class: 'form-control', required: true %>
+              </div>
+            </div>
+
+            <div class="form-group">  
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                  <%= t('customers.email') %>
+                  <span class="text-danger">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <%= f.text_field :email, class: 'form-control', required: true %>
+               </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                <%= t('customers.phone_number') %>
+                <span class="text-danger">*</span>
+              </label>
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%= f.text_field :phone_number, class: 'form-control', required: true %>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                <%= t('customers.city') %>
+                <span class="text-danger">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <%= f.select :city, options_for_select(CS.cities(:gj, :in)), {:prompt => "City"}, {:id => "city-picker"} %>
+              </div>
+            </div>  
+            </br>
+
+            <div class="form-group">
+              <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button class="btn btn-primary" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+           </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+</body>
+</html>
