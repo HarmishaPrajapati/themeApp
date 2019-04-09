@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-	def welcome_email(cleaner)
-		@cleaner = cleaner
-    mail(to: @cleaner.email, subject: 'Welcome to HomeWorker Site')
+	def welcome_email(c)
+    @cleaner = c
+    mail(to: @cleaner.email, subject: 'HomeWorker')
     end
 end

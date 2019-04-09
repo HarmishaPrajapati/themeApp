@@ -17,16 +17,18 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    cleaner = Cleaner.where(first_name: params[:first_name])
-    #binding.pry
+    cleaner = Cleaner.select(:first_name, :email)
     if @booking.save
-      if (@booking.cleaner_name == cleaner)
-        UserMailer.welcome_email(cleaner).deliver_now
-        redirect_to @booking
-      else
-        render 'new'
+      cleaner.each do |c|
+        if (@booking.cleaner_name == c.first_name)
+          UserMailer.welcome_email(c).deliver_now
+          redirect_to @booking
+        end
       end
+    else
+      render 'new'
     end
+    
   end
 
   def update
