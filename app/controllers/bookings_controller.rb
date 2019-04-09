@@ -18,17 +18,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     cleaner = Cleaner.select(:first_name, :email)
-    if @booking.save
-      cleaner.each do |c|
-        if (@booking.cleaner_name == c.first_name)
-          UserMailer.welcome_email(c).deliver_now
-          redirect_to @booking
+    render 'new' unless @booking.save
+    cleaner.each do |cleaner|
+      if (@booking.cleaner_name == cleaner.first_name)
+        UserMailer.welcome_email(cleaner).deliver_now
+        redirect_to @booking
         end
-      end
-    else
-      render 'new'
-    end
-    
+      end  
   end
 
   def update

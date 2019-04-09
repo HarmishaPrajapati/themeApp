@@ -30,4 +30,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ForgetPassword: 
+    resetlink: "Send me reset password instructions"
+
+  Main:
+    welcome: "This is the sample app HomeWorker where the cleaners are booked online for home cleaning.
+					    To Register your self go to customer/cleaner option.
+					    The Customers can book cleaners directly if they are Registerd.
+              Cleaners get Email when the new booking is creted."
+              
+  Customer:
+    show: "Welcome to the HomeWorker  !! We are glad to see You here.
+          This site will help you for online booking of Home Cleaning.
+          You can see the list of Cleaners working for Home Cleaning.
+          Based on Quality Score of cleaner You can book cleaner for Home Cleaning.
+          Have a Great day :)"
+
+  Cleaner:
+    show: "Welcome to the HomeWorker !! We are glad to see You here.
+          This site will help you for online booking of Home Cleaning.
+          When the new Booking is created the Email is delivered to Your Mail address.
+          Make sure you have entered correct Email address. if not you can change profile any time.
+          Have a Great day :)"
+        
+  Booking:
+    main: "You have successfully booked Cleaner"

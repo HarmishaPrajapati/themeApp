@@ -1,7 +1,7 @@
 <%= render 'layouts/home'%>
 <div class="right_col" role="main" style="min-height: 600px;"> 
-<div class="container">
-  <h1>Displaying All Bookings</h1><br>
+  <div class="container">
+    <h1>Displaying All Bookings</h1><br>
     <table class="table table-striped jambo_table bulk_action">
       <thead>
         <tr>
@@ -11,14 +11,14 @@
         </tr>
       </thead>
       <tbody>
-      <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.customer_name %></td>
-        <td><%= booking.cleaner_name %></td>
-        <td><%= booking.date %></td>
-      </tr>
-      <%end%>
-    </tbody>
+        <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.customer_name %></td>
+          <td><%= booking.cleaner_name %></td>
+          <td><%= booking.date %></td>
+        </tr>
+        <%end%>
+      </tbody>
     </table>
     </div>
   </div>

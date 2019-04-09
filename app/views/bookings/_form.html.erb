@@ -8,6 +8,7 @@
           <a class="btn  btn-info" href="<%=cleaners_path%>"><i class="fa fa-eye"></i>  See cleaners List</a>
           </div>
         </h1><br>
+
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">
               <%= t('bookings.customer_name') %>
@@ -17,6 +18,7 @@
               <%= f.text_field :customer_name, class: 'form-control', required: true %>
             </div>
           </div>
+
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">
               <%= t('bookings.cleaner_name') %>
@@ -26,20 +28,17 @@
               <%= f.text_field :cleaner_name, class: 'form-control', required: true %>
             </div>
           </div>
+
           <div class="form-group">  
             <label class="control-label col-md-3 col-sm-3 col-xs-12">
               <%= t('bookings.date') %>
               <span class="text-danger">*</span>
             </label>
-              <script>
-              $(function() {
-              $( "#datepicker" ).datepicker();
-              });
-              </script>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <%= f.text_field :date, class: 'form-control', class: 'form-control', id: "datepicker", required: true %>
+              <%= f.text_field :date, class: 'form-control', class: 'form-control', class: "datepicker", required: true %>
             </div>
           </div></br>
+          
           <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
               <button class="btn btn-primary" type="reset">Reset</button>
